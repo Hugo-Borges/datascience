@@ -7,8 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1jBCblCjXNwy_FjSE-UbKBM0l5_GKg-BC
 """
 
-#!pip install beautifulsoup4
-#!pip install lxml
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -18,7 +16,7 @@ link = 'http://www.nuforc.org/webreports/ndxe'
 final ='.html'
 
 df_1 = []
-c=0
+
 for i in range(1997,2018):
   mes = ['01','02','03','04','05','06','07','08','09','10','11','12']
   if(i==1998):  
@@ -35,13 +33,3 @@ for i in range(1997,2018):
 
 df_2 = pd.concat(df_1, ignore_index=True)
 df_2.to_csv('OvNi.csv',index=False)
-
-#     rr = requests.get(url_it)
-#     print(rr)
-#     lista_r = BeautifulSoup(rr.text, 'html.parser')
-#     lista_link2 = lista_r.find_all('table')
-#     print(lista_link2)
-#     df = pd.read_html(lista_link2)
-    
-#     print(df)
-
